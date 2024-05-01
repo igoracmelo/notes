@@ -14,8 +14,6 @@
   - don't try to be clever
   - be consistent and impose a convention (do equivalent things the same way to avoid confusion)
 - the book is not a set of arbitrary rules, just some ideas to put in practice
-- suggested reading:
-  - The Elements of Programming Style (Kernighan & Plauger)
 
 *** 1.1. Names
 - misleading names can cause bugs
@@ -81,13 +79,55 @@
   - sizes can vary by implementation
   
 *** 1.6. Comments
-- Comments lie
-- code tells WHAT, not WHY
-- if comments and code diverge
-  - probably comments are outdated since code is runned in production
 - bad comments
-  - comments that tell you what the code already tells you
+  - tell you what the code already tells you
     - exception: documentation summarizing code
-  - comments that are more confusing than the code itself
-  - comments that are buggy (outdated with the code behavior)
-  
+  - are more confusing than the code itself
+  - are buggy (outdated with the code behavior)
+  - are distracting
+- good comments
+  - tell you WHY the code is doing what its doing
+  - gives you a larger scale view
+  - explain non self-evident or subtle things
+ - keep comments updated 
+
+*** 1.7. Why Bother?
+- suggested readings:
+  - The Elements of Programming Style (Kernighan & Plauger)
+  - Writing Solid Code (Steve Maguire)
+  - Expert C Programming (Prentice Hall)
+
+** 2. Algorithms and Data Structures
+
+*** 2.0. - 2.4. Intro, Searching, Sorting, Libraries, Java Quicksort
+- a good algorithm can solve problems that would take years in a few seconds
+- most data structure in complex softwares are simple (arrays, lists, trees, maps)
+- understand common algorithms to be able to choose
+- code verbatim**?
+- linear search: O(N) - proportional to data size
+- binary search: bisect until you find it - O(log N)
+- you can sort once and binary search multiple times if data is static
+- quicksort was invented by C.A.R Hoare
+- C: qsort, bsearch
+
+*** 2.5. O-Notation
+- used to compare running time and space requirements for algorithms
+- is agnostic to CPU speed, language, architecture, disk speed, and so on
+- big O expected vs big O worst case
+- quicksort worst case is O(N^2) (when**?) and expected is O(N log N)
+- big O's from lowest to largests:
+  - O(1) - array index
+  - O(log N) - binary search
+  - O(N) - linear search
+  - O(N log N) - quicksort, mergesort
+  - O(N^2) - bubblesort
+  - O(N^3) - TODO* add example
+  - O(2^N) - TODO* add example
+
+*** 2.6. Growing Arrays
+- capacity = underlying array length
+- length = dynamic array current used size
+- when length hits capacity and you try to append
+  - should allocate a new array and copy all items to it
+  - ideally should grow the length in factors to amortize overhead
+  - is ~realloc~ ISO C?
