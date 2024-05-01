@@ -1,0 +1,13 @@
+#+title The Practice of Programming (Pike & Kernighan)
+
+** 1. Style
+- Comments lie
+- code tells WHAT, not WHY
+- if comments and code diverge
+  - probably comments are outdated since code is runned in production
+- programs are not only read by computers
+  - your code should be readable for your colleagues and for you in the future
+  - well written code is easier to understand and modify
+  - poorly written code has more chances to have bugs
+- how to write clear code
+  - be idiomatic (follow conventions)
