@@ -39,6 +39,46 @@
   - name should be an action
   - if returns bool, should ideally be ~isSomething~ instead of ~checkSomething~
 
+*** 1.2. Expressions and Statements
+- avoid multiple expressions in a single line
+  - break it in multiple lines to make it clearer
+  - this is bad and potentially buggy:
+  - ~int age = (ptr == NULL) ? 0 : (*(struct user*)ptr).age++;~
+  - (there are better examples, just though of it)
+- avoid crazy expressions inside for loop
+- use parenthesis to make the intent clearer
+  - in C you can cause undefined behavior in some scenarios
+- be careful with ++ operator
+
+*** 1.3. Consistency and Idioms
+- follow the programming language idioms
+  - if there is a common way of doing a specific thing, follow the standard
+  - in Go, name your error as `err` when possible
+  - every language has a common way of handling errors, reading files, and so on
+
+*** 1.4. (C/C++) Function Macros
+- macros can be dangerous
+  - they can evaluate parameters more than once
+  - not properly using parenthesis / braces can lead to bugs
+- macros should be avoided when they are not required
+- surround macro body with parentheesis or braces
+
+
+*** 1.5. Magic Numbers
+- examples
+  - conversion factors
+  - array sizes
+  - ids for databases
+- magic numbers must have names
+- use enums instead of macros when possible
+- in C you cannot use const for array size, so macro is needed
+- representing 0 in C
+  - use 0 for integers
+  - use NULL for pointers
+  - use '\0' for null byte
+- use sizeof instead of manually writing the size
+  - less error prone
+  - sizes can vary by implementation
   
 *** 1.6. Comments
 - Comments lie
