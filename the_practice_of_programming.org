@@ -1,4 +1,4 @@
-#+title The Practice of Programming (Pike & Kernighan)
+#+title: The Practice of Programming (Pike & Kernighan)
 
 ** 1. Style
 - Comments lie
@@ -11,3 +11,14 @@
   - poorly written code has more chances to have bugs
 - how to write clear code
   - be idiomatic (follow conventions)
+  - keep your logic straightforward
+  - use descriptive names
+  - use a consistent formatting
+  - add helpful comments
+  - don't try to be clever
+  - be consistent (do equivalent things the same way to avoid confusion)
+- bad comments
+  - comments that tell you what the code already tells you
+    - exception: documentation summarizing code
+  - comments that are more confusing than the code itself
+  - comments that are buggy (outdated with the code behavior
