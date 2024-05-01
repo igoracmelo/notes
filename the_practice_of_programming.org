@@ -1,10 +1,6 @@
 #+title: The Practice of Programming (Pike & Kernighan)
 
 ** 1. Style
-- Comments lie
-- code tells WHAT, not WHY
-- if comments and code diverge
-  - probably comments are outdated since code is runned in production
 - programs are not only read by computers
   - your code should be readable for your colleagues and for you in the future
   - well written code is easier to understand and modify
@@ -16,9 +12,42 @@
   - use a consistent formatting
   - add helpful comments
   - don't try to be clever
-  - be consistent (do equivalent things the same way to avoid confusion)
+  - be consistent and impose a convention (do equivalent things the same way to avoid confusion)
+- the book is not a set of arbitrary rules, just some ideas to put in practice
+- suggested reading:
+  - The Elements of Programming Style (Kernighan & Plauger)
+
+*** 1.1. Names
+- misleading names can cause bugs
+  - names that hide side effects
+  - names that wrongly describe what the function does
+- don't always use long names, they not always bring value
+  - do: ~for (int i = 0; ...)~
+  - don't: ~for (int indexOfTheArray = 0; ...)~
+- names should strive to 
+  - have purpose
+  - be concise
+  - be memorable
+  - be, if possible, pronounceable
+  - follow conventions (like ~for (int i = 0; ...)~) 
+  - avoid redundancy (use ~user.Load~ instead of ~user.LoadUser~)
+- size
+  - proportional to scope
+  - global variables should have more descriptive names
+  - variables with short scope can have a short name
+- functions
+  - name should be an action
+  - if returns bool, should ideally be ~isSomething~ instead of ~checkSomething~
+
+  
+*** 1.6. Comments
+- Comments lie
+- code tells WHAT, not WHY
+- if comments and code diverge
+  - probably comments are outdated since code is runned in production
 - bad comments
   - comments that tell you what the code already tells you
     - exception: documentation summarizing code
   - comments that are more confusing than the code itself
-  - comments that are buggy (outdated with the code behavior
+  - comments that are buggy (outdated with the code behavior)
+  
